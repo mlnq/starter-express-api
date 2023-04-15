@@ -3,12 +3,12 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const swaggerUi = require("swagger-ui-express"),
   swaggerDocument = require("./swagger.json");
-const fs = require("fs");
+// const fs = require("fs");
 const dbConfig = require("./config/db.config.js");
-const https = require("https");
+// const https = require("https");
 const app = express();
-const IP = require("ip");
-const request = require("request");
+// const IP = require("ip");
+// const request = require("request");
 
 var corsOptions = {
   //    origin: "https://localhost:3000",
@@ -79,24 +79,24 @@ const PORT = process.env.PORT || 8080;
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // HTTPS options
-const options = {
-  key: fs.readFileSync("../common/key.pem"),
-  cert: fs.readFileSync("../common/cert.pem"),
-};
+// const options = {
+//   key: fs.readFileSync("../common/key.pem"),
+//   cert: fs.readFileSync("../common/cert.pem"),
+// };
 //change to https
 // https.createServer(options, app).listen(PORT, () => {
 //     console.log(`Server is running on port ${PORT}.`);
 // });
 app.listen(PORT, console.log(`Server is running on port ${PORT}.`));
 
-const localIp = IP.address();
-console.log("Local IP address: " + localIp);
+// const localIp = IP.address();
+// console.log("Local IP address: " + localIp);
 
-request("https://api.ipify.org", (error, response, body) => {
-  if (!error && response.statusCode === 200) {
-    const globalIp = body;
-    console.log("Global IP address: " + globalIp);
-  } else {
-    console.error("Unable to get global IP address: " + error);
-  }
-});
+// request("https://api.ipify.org", (error, response, body) => {
+//   if (!error && response.statusCode === 200) {
+//     const globalIp = body;
+//     console.log("Global IP address: " + globalIp);
+//   } else {
+//     console.error("Unable to get global IP address: " + error);
+//   }
+// });
