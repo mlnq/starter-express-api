@@ -12,7 +12,8 @@ const request = require("request");
 
 var corsOptions = {
   //    origin: "https://localhost:3000",
-  origin: "https://main--bppnjg-dev.netlify.app",
+  //   origin: "https://main--bppnjg-dev.netlify.app",
+  origin: true,
   credentials: true,
 };
 
