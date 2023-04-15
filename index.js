@@ -79,10 +79,10 @@ const PORT = process.env.PORT || 8080;
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // HTTPS options
-const options = {
-  key: fs.readFileSync("/common/key.pem"),
-  cert: fs.readFileSync("/common/cert.pem"),
-};
+// const options = {
+//   key: fs.readFileSync("./common/key.pem"),
+//   cert: fs.readFileSync("./common/cert.pem"),
+// };
 //change to https
 // https.createServer(options, app).listen(PORT, () => {
 //     console.log(`Server is running on port ${PORT}.`);
